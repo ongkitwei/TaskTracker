@@ -1,5 +1,5 @@
 import SideBar from './SideBar';
-import ContentPage from './ContentPage';
+import ContentPage from './contentPage';
 
 function App() {
 

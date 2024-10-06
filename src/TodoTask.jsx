@@ -1,10 +1,11 @@
-function TodoTask() {
+import React, { useContext } from 'react';
 
+function TodoTask() {
   return (
-    <div>
+    <div className="border-2 border-blue-400 mt-3 rounded-lg p-2">
         <input type="checkbox"></input>
-        <span>header</span>
-        <p>details.......</p>
+        <span>sadasdsd</span>
+        <p>details...</p>
     </div>
   )
 }

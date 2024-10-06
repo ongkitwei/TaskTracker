@@ -1,21 +1,25 @@
-import { useState } from "react";
+import { useState, createContext, useRef, useEffect, useContext } from "react";
 import { FaTasks } from "react-icons/fa";
+import TodoTask from "./TodoTask";
+import { MyContext } from "./contentPage";
 
 function Modal({show, onClose}){
-  const[todosTitle, settodosTitle] = useState([]);
-  const[todosDescrip, settodosDescrip] = useState([]);
-  const[todosPior, settodosPior] = useState([]);
   // decided not to use object in state cos too messy
-
+  const {
+    todosTitle, settodosTitle, 
+    todosDescrip, settodosDescrip, 
+    todosPior, settodosPior
+  } = useContext(MyContext);
 
   function handleAddButton(){
     let newtodosTitle = document.getElementById("title-id").value;
     let newtodosDescrip = document.getElementById("description-id").value;
     let newtodosP = document.getElementById("p-level").value;
 
-    settodosTitle(...todosTitle, newtodosTitle);
-    settodosDescrip(...todosDescrip, newtodosDescrip);
-    settodosPior(...todosPior, newtodosP);
+    settodosTitle(todosTitle => [...todosTitle, newtodosTitle]);
+    settodosDescrip(todosDescrip => [...todosDescrip, newtodosDescrip]);
+    settodosPior(todosPior => [...todosPior, newtodosP]);
+    console.log(todosTitle);
     onClose();
  }
 
