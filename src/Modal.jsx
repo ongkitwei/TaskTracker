@@ -45,7 +45,7 @@ function Modal({show, onClose}){
             </div>
 
 
-            <select name="priority" id="p-level" className="mt-5 bg-white font-semibold">
+            <select name="priority" id="p-level" className="mt-5 font-semibold">
               <option value="High">High</option>
               <option value="Medium">Medium</option>
               <option value="Low">Low</option>
@@ -53,7 +53,7 @@ function Modal({show, onClose}){
 
             <div className="pt-[50px] flex flex-row justify-around">
               <button className="py-1 px-7 border-2 border-gray-300 rounded-lg" onClick={onClose}>CANCEL</button>
-              <button className="py-1 px-10 bg-blue-400 rounded-lg" type="submit" onClick={handleAddButton}>ADD</button>
+              <button className="py-1 px-10 bg-blue-400 rounded-lg hover:bg-blue-300" type="submit" onClick={handleAddButton}>ADD</button>
             </div>
 
           </form>
