@@ -14,6 +14,12 @@ function TodoTask() {
   const { title, setTitle, desc, setDesc, priority, setPriority } =
     useContext(ModalContext);
 
+  function deleteButton(i) {
+    setTitle((newTitle) => title.filter((_, index) => index != i));
+    setDesc((newDesc) => desc.filter((_, index) => index != i));
+    setPriority((newPriority) => priority.filter((_, index) => index != i));
+  }
+
   return (
     <div>
       {title.map((todo, index) => (
@@ -32,7 +38,7 @@ function TodoTask() {
           </div>
           <div className="flex flex-row items-center">
             <button
-              className={`border-2 p-1 mr-2 rounded-xl ${
+              className={`border-2 p-1 w-[70px] mr-2 rounded-xl ${
                 priority[index] == "High"
                   ? " border-red-400 text-red-400 bg-red-100"
                   : priority[index] == "Medium"
@@ -51,7 +57,10 @@ function TodoTask() {
                 <DropdownMenuItem className="hover:cursor-pointer">
                   Edit
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:cursor-pointer">
+                <DropdownMenuItem
+                  className="hover:cursor-pointer"
+                  onClick={() => deleteButton(index)}
+                >
                   Delete
                 </DropdownMenuItem>
                 <DropdownMenuItem className="hover:cursor-pointer">

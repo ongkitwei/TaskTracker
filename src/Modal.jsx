@@ -19,6 +19,8 @@ function Modal({ show, onClose }) {
     onClose();
   }
 
+  function editButton() {}
+
   if (!show) {
     return null;
   } else {
