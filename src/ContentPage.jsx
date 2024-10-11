@@ -4,6 +4,7 @@ import { FiFilter } from "react-icons/fi";
 import Modal from "./Modal";
 import { createContext } from "react";
 import { ModalContext } from "./context/ModalContext";
+import { FcTodoList } from "react-icons/fc";
 
 export const MyContext = createContext();
 
@@ -25,7 +26,9 @@ function ContentPage() {
     <>
       <div className="mt-[60px] ml-[140px] mr-[140px] flex flex-col justify-start w-full">
         <div className="border-b-2 border-gray-150 pb-5">
-          <header className="text-2xl">To-Do</header>
+          <header>
+            <FcTodoList className="size-8" />
+          </header>
         </div>
         <div className="pt-4 pb-2 flex flex-row">
           <button
